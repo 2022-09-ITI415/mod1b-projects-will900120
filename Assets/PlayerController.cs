@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private float movementY;
     private int count;
     
+    
    
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,12 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate(){
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
         rb.AddForce(movement * speed);
+    }
+
+    void Update(){
+          if (Input.GetKeyDown ("space")){
+                  transform.Translate(Vector3.up * 260 * Time.deltaTime, Space.World);
+          } 
     }
     
     private void OnTriggerEnter(Collider other){
