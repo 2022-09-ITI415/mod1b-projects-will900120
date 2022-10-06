@@ -248,6 +248,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 8544546374085910668, guid: 51f98c281917b4096bda8eb3431c8ec1, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9152770562535157884, guid: 51f98c281917b4096bda8eb3431c8ec1, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -294,23 +298,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51f98c281917b4096bda8eb3431c8ec1, type: 3}
---- !u!1 &547588460 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3438738851277880441, guid: 51f98c281917b4096bda8eb3431c8ec1, type: 3}
-  m_PrefabInstance: {fileID: 437739160}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &547588466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547588460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95793f972eb5247d8bacd6c173487880, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &595951528
 PrefabInstance:
   m_ObjectHideFlags: 0
