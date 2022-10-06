@@ -5,15 +5,15 @@ public class Slingshot : MonoBehaviour
 {
     static private Slingshot S;
     [Header("Set in inspector")]
-    public GameObject prefabProjectile;
+    public GameObject prefabBall;
     public float velocityMult = 8f;
 
     [Header("Set Dynamically")]
     public GameObject launchPoint;
     public Vector3 launchPos;
-    public GameObject projectile;
+    public GameObject ball;
     public bool aimingMode;
-    private Rigidbody projectileRigidbody;
+    private Rigidbody ballRigidbody;
 
     static public Vector3 LAUNCH_POS{
         get{
@@ -42,11 +42,11 @@ public class Slingshot : MonoBehaviour
 
     void OnMouseDown(){
         aimingMode = true;
-        projectile = Instantiate(prefabProjectile) as GameObject;
-        projectile.transform.position = launchPos;
-        projectile.GetComponent<Rigidbody>().isKinematic = true;
-        projectileRigidbody = projectile.GetComponent<Rigidbody>();
-        projectileRigidbody.isKinematic = true;
+        ball = Instantiate(prefabBall) as GameObject;
+        ball.transform.position = launchPos;
+        ball.GetComponent<Rigidbody>().isKinematic = true;
+        ballRigidbody = ball.GetComponent<Rigidbody>();
+        ballRigidbody.isKinematic = true;
     }
 
     void Update(){
@@ -64,16 +64,16 @@ public class Slingshot : MonoBehaviour
         }
 
         Vector3 projPos = launchPos + mouseDelta;
-        projectile.transform.position = projPos;
+        ball.transform.position = projPos;
 
         if(Input.GetMouseButtonUp(0)){
             aimingMode = false;
-            projectileRigidbody.isKinematic = false;
-            projectileRigidbody.velocity = -mouseDelta * velocityMult;
-            FollowCam.POI = projectile;
-            projectile = null;
+            ballRigidbody.isKinematic = false;
+            ballRigidbody.velocity = -mouseDelta * velocityMult;
+            FollowCam.POI = ball;
+            ball = null;
             MissionDemolition.ShotFired();
-            ProjectileLine.S.poi = projectile;
+            ProjectileLine.S.poi = ball;
         }
     }
 }
