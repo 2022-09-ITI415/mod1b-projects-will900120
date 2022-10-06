@@ -49,9 +49,9 @@ public class cloud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)){
-            Restart();
-        }
+        //if(Input.GetKeyDown(KeyCode.Space)){
+            //Restart();
+        //}
     }
 
     void Restart(){
