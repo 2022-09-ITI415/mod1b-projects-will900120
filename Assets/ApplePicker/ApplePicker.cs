@@ -37,9 +37,25 @@ public class ApplePicker : MonoBehaviour
         Destroy(tBasketGo);
 
         if(basketList.Count == 0){
-            SceneManager.LoadScene("_Scene_0");
+            SceneManager.LoadScene("Apple Picker.unity");
         }
     }
+
+    public void RestartGame(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    //void GameOver(){
+        //gameOverPanel.SetActive(true);
+        //Destroy(FindObjectOIType<AppleTree>().gameObject);
+        //Apple[]apples = FindObjectOIType<Apple>();
+        //foreach(Apple apple in apples){
+            //Destroy(apple);
+        //}
+        //if(score > highScore){
+            //SceneManager.highScore = score;
+        //}
+    //}
 
     // Update is called once per frame
     void Update()
